@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get    '/'        => 'users#home',     as: :home
+  post   '/sign_up' => 'users#sign_up',  as: :sign_up
+  post   '/sign_in' => 'users#sign_in',  as: :sign_in
+  delete 'sign_out' => 'users#sign_out', as: :sign_out
+  get    '/:name'   => 'users#profile',  as: :profile
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

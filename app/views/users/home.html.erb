@@ -1,0 +1,30 @@
+<h5>REGISTRARSE</h5> <br>
+<%= form_for :user, url: sign_up_path do |f| %>
+    <%= f.label(:name, "Nombre") %>
+    <%= f.text_field(:name) %> <br>
+
+    <%= f.label(:email, "Correo electronico") %>
+    <%= f.text_field(:email) %> <br>
+
+    <%= f.label(:password, "Contraseña") %>
+    <%= f.password_field(:password) %> <br>
+
+    <%= f.label(:password_confirmation, "Confirmar contraseña") %>
+    <%= f.password_field(:password_confirmation) %> <br>
+
+    <%= f.submit("Iniciar sesion") %>
+<% end %>
+
+<h5>INICIAR SESION</h5>
+
+<%= form_for :session, url: sign_in_path do |f| %>
+
+    <%= f.label(:email, "Correo electronico") %>
+    <%= f.text_field(:email) %> <br>
+
+    <%= f.label(:password, "Contraseña") %>
+    <%= f.password_field(:password) %> <br>
+
+
+    <%= f.submit("Iniciar sesion") %>
+<% end %>
