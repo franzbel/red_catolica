@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def profile
     # render(:text => params[:name])
     @user = User.find_by_name(params[:name])
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   def sign_out

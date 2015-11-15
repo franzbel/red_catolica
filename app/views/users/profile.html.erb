@@ -1,1 +1,29 @@
-<%= @user.name %>
+<div class="row portada">
+  <div class="col-md-12">
+    <%= @user.name %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 configuracion">
+
+  </div>
+  <div class="col-md-8 publicaciones">
+    <%= form_for :post, url: posts_path do |f| %>
+        <div class="form-group">
+          <%= f.text_area(:body, class: "form-control", placeholder: "Como te sientes?") %>
+        </div>
+          <%= f.submit("Publicar", class: "btn btn-primary") %>
+    <% end %>
+
+    <% if @user.posts.any? %>
+        <h3><%= @user.posts.count %></h3>
+        <ol>
+          <%= render @posts %>
+        </ol>
+        <%= will_paginate @posts %>
+    <% end %>
+  </div>
+</div>
+
+
+

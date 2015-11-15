@@ -28,3 +28,27 @@ html, body {
 
 
 }
+p{
+  margin-top: 25px;
+  color: #ffffff;
+  font-family: 'Raleway',sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 52px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+//ESTILOS PARA LA PAGINA PERFIL
+.portada{
+  background-color: rgba(255, 188, 100, 0.8);
+  height: 33%;
+  text-align: center;
+  font-size: 32px;
+}
+.configuracion{
+  border: 1px solid orange;
+}
+.publicaciones{
+  border: 1px solid red;
+}
