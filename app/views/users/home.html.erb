@@ -1,30 +1,51 @@
-<h5>REGISTRARSE</h5> <br>
-<%= form_for :user, url: sign_up_path do |f| %>
-    <%= f.label(:name, "Nombre") %>
-    <%= f.text_field(:name) %> <br>
+<div class="home">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-3">
+      <div class="formulario">
+        <%= form_for :user, url: sign_up_path do |f| %>
+            <div class="form-group">
+              <!--<%= f.label(:name, "Nombre") %>-->
+              <%= f.text_field(:name, class: "form-control", placeholder: "Tu nombre") %>
+            </div>
+            <div class="form-group">
+              <!--<%= f.label(:email, "Correo electronico") %>-->
+              <%= f.text_field(:email, class: "form-control", placeholder: "Email") %>
+            </div>
+            <div class="form-group">
+              <!--<%= f.label(:password, "Contraseña") %>-->
+              <%= f.password_field(:password, class: "form-control", placeholder: "Contraseña") %>
+            </div>
+            <div class="form-group">
+              <!--<%= f.label(:password_confirmation, "Confirmar contraseña") %>-->
+              <%= f.password_field(:password_confirmation, class: "form-control", placeholder: "Confirmar contraseña") %>
+            </div>
 
-    <%= f.label(:email, "Correo electronico") %>
-    <%= f.text_field(:email) %> <br>
+            <%= f.submit("Registrarse", class: "btn btn-primary") %>
 
-    <%= f.label(:password, "Contraseña") %>
-    <%= f.password_field(:password) %> <br>
+        <% end %>
+      </div>
 
-    <%= f.label(:password_confirmation, "Confirmar contraseña") %>
-    <%= f.password_field(:password_confirmation) %> <br>
+      <div class="formulario">
+        <%= form_for :session, url: sign_in_path do |f| %>
+            <div class="form-group">
+              <!--<%= f.label(:email, "Correo electronico") %>-->
+              <%= f.text_field(:email, class: "form-control", placeholder: "Email") %>
+            </div>
 
-    <%= f.submit("Iniciar sesion") %>
-<% end %>
+            <div class="form-group">
+              <!--<%= f.label(:password, "Contraseña") %>-->
+              <%= f.password_field(:password, class: "form-control", placeholder: "Contraseña") %>
 
-<h5>INICIAR SESION</h5>
+            </div>
 
-<%= form_for :session, url: sign_in_path do |f| %>
+            <%= f.submit("Iniciar sesion", class: "btn btn-primary") %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-3">
+  </div>
 
-    <%= f.label(:email, "Correo electronico") %>
-    <%= f.text_field(:email) %> <br>
 
-    <%= f.label(:password, "Contraseña") %>
-    <%= f.password_field(:password) %> <br>
-
-
-    <%= f.submit("Iniciar sesion") %>
-<% end %>
+</div>
